@@ -920,8 +920,8 @@ public final class JobRequest {
             JobPreconditions.checkNotNull(mNetworkType);
 
             if (mIntervalMs > 0) {
-                JobPreconditions.checkArgumentInRange(mIntervalMs, getMinInterval(), Long.MAX_VALUE, "intervalMs");
-                JobPreconditions.checkArgumentInRange(mFlexMs, getMinFlex(), mIntervalMs, "flexMs");
+                // JobPreconditions.checkArgumentInRange(mIntervalMs, getMinInterval(), Long.MAX_VALUE, "intervalMs");
+                // JobPreconditions.checkArgumentInRange(mFlexMs, getMinFlex(), mIntervalMs, "flexMs");
 
                 if (mIntervalMs < MIN_INTERVAL || mFlexMs < MIN_FLEX) {
                     // this means the debug flag is set to true
