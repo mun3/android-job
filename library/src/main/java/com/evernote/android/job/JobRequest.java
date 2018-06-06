@@ -1041,8 +1041,8 @@ public final class JobRequest {
          * @see #MIN_FLEX
          */
         public Builder setPeriodic(long intervalMs, long flexMs) {
-            mIntervalMs = JobPreconditions.checkArgumentInRange(intervalMs, getMinInterval(), Long.MAX_VALUE, "intervalMs");
-            mFlexMs = JobPreconditions.checkArgumentInRange(flexMs, getMinFlex(), mIntervalMs, "flexMs");
+            mIntervalMs = intervalMs; // JobPreconditions.checkArgumentInRange(intervalMs, getMinInterval(), Long.MAX_VALUE, "intervalMs");
+            mFlexMs = flexMs; // JobPreconditions.checkArgumentInRange(flexMs, getMinFlex(), mIntervalMs, "flexMs");
             return this;
         }
 
@@ -1109,8 +1109,8 @@ public final class JobRequest {
             JobPreconditions.checkNotNull(mNetworkType);
 
             if (mIntervalMs > 0) {
-                JobPreconditions.checkArgumentInRange(mIntervalMs, getMinInterval(), Long.MAX_VALUE, "intervalMs");
-                JobPreconditions.checkArgumentInRange(mFlexMs, getMinFlex(), mIntervalMs, "flexMs");
+                // JobPreconditions.checkArgumentInRange(mIntervalMs, getMinInterval(), Long.MAX_VALUE, "intervalMs");
+                // JobPreconditions.checkArgumentInRange(mFlexMs, getMinFlex(), mIntervalMs, "flexMs");
 
                 if (mIntervalMs < MIN_INTERVAL || mFlexMs < MIN_FLEX) {
                     // this means the debug flag is set to true
